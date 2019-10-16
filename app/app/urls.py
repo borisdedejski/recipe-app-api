@@ -15,7 +15,6 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from rest_framework.schemas.coreapi import AutoSchema
 from rest_framework.documentation import include_docs_urls
 API_TITLE = 'API title'
 API_DESCRIPTION = '...'
@@ -23,6 +22,7 @@ API_DESCRIPTION = '...'
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/user/', include('user.urls')),
-    path('api/docs/', include_docs_urls(title=API_TITLE, description=API_DESCRIPTION),name='openapi-schema')
+    path('api/docs/', include_docs_urls(title=API_TITLE,
+                                        description=API_DESCRIPTION), name='openapi-schema')
 
 ]
