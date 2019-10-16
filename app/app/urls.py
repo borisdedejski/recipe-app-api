@@ -23,6 +23,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/user/', include('user.urls')),
     path('api/docs/', include_docs_urls(title=API_TITLE,
-                                        description=API_DESCRIPTION), name='openapi-schema')
-
+                                        description=API_DESCRIPTION), name='openapi-schema'),
+    path('api/recipe/', include('recipe.urls'))
 ]
