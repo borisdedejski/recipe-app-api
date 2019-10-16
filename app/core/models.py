@@ -75,4 +75,4 @@ class Recipe(models.Model):
     tags = models.ManyToManyField('Tag')
 
     def __str__(self):
-        return self.titleF
+        return self.title
