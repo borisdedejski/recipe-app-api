@@ -16,6 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework.documentation import include_docs_urls
+from django.conf.urls.static import static
+from django.conf import settings
+
+
 API_TITLE = 'Recipes App'
 API_DESCRIPTION = 'Docker + Django'
 
@@ -25,4 +29,4 @@ urlpatterns = [
     path('api/docs/', include_docs_urls(title=API_TITLE,
                                         description=API_DESCRIPTION), name='openapi-schema'),
     path('api/recipe/', include('recipe.urls'))
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
